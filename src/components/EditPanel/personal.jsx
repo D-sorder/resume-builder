@@ -104,23 +104,23 @@ function Personal ({ onChange, data }) {
                         <div className="section__coll">
                             <h5 className="section__coll-title">Тип занятости:</h5>
                             <label className="section__check-label">
-                                <input type="checkbox" name="type" checked={ data.type ? data.type.includes("полная занятость") : ''} value="полная занятость" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="type" checked={ data.type.includes("полная занятость") } value="полная занятость" className="section__check" onChange={handleInputChange} />
                                 Полная занятость
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="type" checked={ data.type ? data.type.includes("частичная занятость") : ''} value="частичная занятость" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="type" checked={ data.type.includes("частичная занятость") } value="частичная занятость" className="section__check" onChange={handleInputChange} />
                                 Частичная занятость
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="type" checked={ data.type ? data.type.includes("проектная занятость") : ''} value="проектная занятость" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="type" checked={ data.type.includes("проектная занятость") } value="проектная занятость" className="section__check" onChange={handleInputChange} />
                                 Проектная занятость
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="type" checked={ data.type ? data.type.includes("волонтерство") : ''} value="волонтерство" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="type" checked={ data.type.includes("волонтерство") } value="волонтерство" className="section__check" onChange={handleInputChange} />
                                 Волонтерство
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="type" checked={ data.type ? data.type.includes("стажировка") : ''} value="стажировка" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="type" checked={ data.type.includes("стажировка") } value="стажировка" className="section__check" onChange={handleInputChange} />
                                 Стажировка
                             </label>
                         </div>
