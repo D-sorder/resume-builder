@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function Personal ({ onChange, data }) {
     const [image, setImage] = useState(data.photo);
@@ -16,6 +16,15 @@ function Personal ({ onChange, data }) {
             reader.readAsDataURL(file)
         }
     }
+
+    useEffect(() => {
+        if (Array.isArray(data.schedles)) {
+            setSchedules(data.schedles)
+        }
+        if (Array.isArray(data.type)) {
+            setTypes(data.type);
+        }
+    }, [data])
 
     const handleInputChange = (e) => {
         const { name, value, checked } = e.target
@@ -55,6 +64,12 @@ function Personal ({ onChange, data }) {
         
     }
 
+    window.addEventListener('load', () => {
+        console.log(data)
+    })
+
+    console.log(data.type)
+
     return (
 
             <div className="section personal">
@@ -81,46 +96,46 @@ function Personal ({ onChange, data }) {
                         <div className="section__coll">
                             <h5 className="section__coll-title">График:</h5>
                             <label className="section__check-label">
-                                <input type="checkbox" name="schedule" checked={ data.schedles ? data.schedule.includes("полный день") : false} value="полный день" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="schedule" checked={schedles.includes("полный день")} value="полный день" className="section__check" onChange={handleInputChange} />
                                 Полный день
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="schedule" checked={ data.schedles ? data.schedule.includes("сменный график") : false} value="сменный график" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="schedule" checked={schedles.includes("сменный график")} value="сменный график" className="section__check" onChange={handleInputChange} />
                                 Сменный график
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="schedule" checked={ data.schedles ? data.schedule.includes("гибкий график") : false} value="гибкий график" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="schedule" checked={schedles.includes("гибкий график")} value="гибкий график" className="section__check" onChange={handleInputChange} />
                                 Гибкий график
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="schedule" checked={ data.schedles ? data.schedule.includes("удаленная работа") : false} value="удаленная работа" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="schedule" checked={schedles.includes("удаленная работа")} value="удаленная работа" className="section__check" onChange={handleInputChange} />
                                 Удаленная работа
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="schedule" checked={ data.schedles ? data.schedule.includes("вахтовый метод") : false} value="вахтовый метод" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="schedule" checked={schedles.includes("вахтовый метод")} value="вахтовый метод" className="section__check" onChange={handleInputChange} />
                                 Вахтовый метод
                             </label>
                         </div>
                         <div className="section__coll">
                             <h5 className="section__coll-title">Тип занятости:</h5>
                             <label className="section__check-label">
-                                <input type="checkbox" name="type" checked={ data.type ? data.type.includes("полная занятость") : false } value="полная занятость" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="type" checked={types.includes("полная занятость")} value="полная занятость" className="section__check" onChange={handleInputChange} />
                                 Полная занятость
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="type" checked={ data.type ? data.type.includes("частичная занятость") : false } value="частичная занятость" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="type" checked={types.includes("частичная занятость")} value="частичная занятость" className="section__check" onChange={handleInputChange} />
                                 Частичная занятость
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="type" checked={ data.type ? data.type.includes("проектная занятость") : false } value="проектная занятость" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="type" checked={types.includes("проектная занятость")} value="проектная занятость" className="section__check" onChange={handleInputChange} />
                                 Проектная занятость
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="type" checked={ data.type ? data.type.includes("волонтерство") : false } value="волонтерство" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="type" checked={types.includes("волонтерство")} value="волонтерство" className="section__check" onChange={handleInputChange} />
                                 Волонтерство
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="type" checked={ data.type ? data.type.includes("стажировка") : false } value="стажировка" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="type" checked={types.includes("стажировка")} value="стажировка" className="section__check" onChange={handleInputChange} />
                                 Стажировка
                             </label>
                         </div>
