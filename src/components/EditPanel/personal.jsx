@@ -18,8 +18,8 @@ function Personal ({ onChange, data }) {
     }
 
     useEffect(() => {
-        if (Array.isArray(data.schedles)) {
-            setSchedules(data.schedles)
+        if (Array.isArray(data.schedule)) {
+            setSchedules(data.schedule)
         }
         if (Array.isArray(data.type)) {
             setTypes(data.type);
@@ -63,12 +63,6 @@ function Personal ({ onChange, data }) {
 
         
     }
-
-    window.addEventListener('load', () => {
-        console.log(data)
-    })
-
-    console.log(data.type)
 
     return (
 
