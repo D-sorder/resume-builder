@@ -81,46 +81,46 @@ function Personal ({ onChange, data }) {
                         <div className="section__coll">
                             <h5 className="section__coll-title">График:</h5>
                             <label className="section__check-label">
-                                <input type="checkbox" name="schedule" checked={ data.schedule.includes("полный день")} value="полный день" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="schedule" checked={ data.schedles ? data.schedule.includes("полный день") : ''} value="полный день" className="section__check" onChange={handleInputChange} />
                                 Полный день
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="schedule" checked={ data.schedule.includes("сменный график")} value="сменный график" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="schedule" checked={ data.schedles ? data.schedule.includes("сменный график") : ''} value="сменный график" className="section__check" onChange={handleInputChange} />
                                 Сменный график
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="schedule" checked={ data.schedule.includes("гибкий график")} value="гибкий график" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="schedule" checked={ data.schedles ? data.schedule.includes("гибкий график") : ''} value="гибкий график" className="section__check" onChange={handleInputChange} />
                                 Гибкий график
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="schedule" checked={ data.schedule.includes("удаленная работа")} value="удаленная работа" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="schedule" checked={ data.schedles ? data.schedule.includes("удаленная работа") : ''} value="удаленная работа" className="section__check" onChange={handleInputChange} />
                                 Удаленная работа
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="schedule" checked={ data.schedule.includes("вахтовый метод")} value="вахтовый метод" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="schedule" checked={ data.schedles ? data.schedule.includes("вахтовый метод") : ''} value="вахтовый метод" className="section__check" onChange={handleInputChange} />
                                 Вахтовый метод
                             </label>
                         </div>
                         <div className="section__coll">
                             <h5 className="section__coll-title">Тип занятости:</h5>
                             <label className="section__check-label">
-                                <input type="checkbox" name="type" checked={data.type.includes("полная занятость")} value="полная занятость" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="type" checked={ data.type ? data.type.includes("полная занятость") : ''} value="полная занятость" className="section__check" onChange={handleInputChange} />
                                 Полная занятость
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="type" checked={data.type.includes("частичная занятость")} value="частичная занятость" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="type" checked={ data.type ? data.type.includes("частичная занятость") : ''} value="частичная занятость" className="section__check" onChange={handleInputChange} />
                                 Частичная занятость
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="type" checked={data.type.includes("проектная занятость")} value="проектная занятость" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="type" checked={ data.type ? data.type.includes("проектная занятость") : ''} value="проектная занятость" className="section__check" onChange={handleInputChange} />
                                 Проектная занятость
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="type" checked={data.type.includes("волонтерство")} value="волонтерство" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="type" checked={ data.type ? data.type.includes("волонтерство") : ''} value="волонтерство" className="section__check" onChange={handleInputChange} />
                                 Волонтерство
                             </label>
                             <label className="section__check-label">
-                                <input type="checkbox" name="type" checked={data.type.includes("стажировка")} value="стажировка" className="section__check" onChange={handleInputChange} />
+                                <input type="checkbox" name="type" checked={ data.type ? data.type.includes("стажировка") : ''} value="стажировка" className="section__check" onChange={handleInputChange} />
                                 Стажировка
                             </label>
                         </div>
